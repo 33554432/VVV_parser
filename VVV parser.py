@@ -14,7 +14,7 @@ def fileparser ():
         else:
             shutil.move (os.path.join (d, file), os.path.join(dst1, file))
     if len (os.listdir(os.path.join(d, r'Thumb')))== 0:
-            os.rmdir(os.path.join(d,r'Thumb'))
+            os.rmdir(os.path.join(d, r'Thumb'))
     ftype = ['RFP', 'DIC', 'GFP']
     x = 0
     count = 1
@@ -60,7 +60,7 @@ def fileparser ():
                 search = re.compile (str (ftype [x])+ '.*' +'_s' + str (alist [b-1]))
                 for file in os.listdir(d):
                     if re.search( search, file) is None:
-                        print (b,x)
+                        print (b, x)
                     else:
                         shutil.move (os.path.join(d, file), os.path.join(dst2, file))
                 if len (os.listdir(dst2)) == 0:
