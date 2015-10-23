@@ -9,7 +9,7 @@ def fileparser ():
     dst1 = os.path.join (d, r'Thumb')
     for file in os.listdir(d):
         c = re.compile ("thumb")
-        if c.search (file) == None:
+        if c.search (file) is None:
             print ('...')
         else:
             shutil.move (os.path.join (d, file), os.path.join(dst1, file))
@@ -35,7 +35,7 @@ def fileparser ():
                     dst2 = os.path.join (d, str(ftype [x]) + '_SAMPLE' + str(aval) + '_S' + str (alist [b-1]))
                     search = re.compile ('Sample' + str(aval) + '.*' + str (ftype [x])+ '.*' + '_s' + str (alist [b-1]))
                     for file in os.listdir(d):
-                        if re.search( search, file) == None:
+                        if re.search( search, file) is None:
                             print (search, aval)
                         else:
                             shutil.move (os.path.join(d, file), os.path.join(dst2, file))
@@ -59,7 +59,7 @@ def fileparser ():
                 dst2 = os.path.join (d, str(ftype [x]) + '_S' + str (alist [b-1]))
                 search = re.compile (str (ftype [x])+ '.*' +'_s' + str (alist [b-1]))
                 for file in os.listdir(d):
-                    if re.search( search, file) == None:
+                    if re.search( search, file) is None:
                         print (b,x)
                     else:
                         shutil.move (os.path.join(d, file), os.path.join(dst2, file))
