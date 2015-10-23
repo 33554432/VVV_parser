@@ -31,9 +31,9 @@ def fileparser ():
         while aval <= 8:
             while x < len (ftype):
                 while 0 < b <= len(alist):
-                    os.mkdir (os.path.join (d, str(ftype [x]) + '_SAMPLE' + str(aval) + '_S' + str (alist [b-1])))
-                    dst2 = os.path.join (d, str(ftype [x]) + '_SAMPLE' + str(aval) + '_S' + str (alist [b-1]))
-                    search = re.compile ('Sample' + str(aval) + '.*' + str (ftype [x]) + '.*' + '_s' + str (alist [b-1]))
+                    os.mkdir (os.path.join (d, str(ftype[x]) + '_SAMPLE' + str(aval) + '_S' + str (alist[b-1])))
+                    dst2 = os.path.join (d, str(ftype[x]) + '_SAMPLE' + str(aval) + '_S' + str (alist[b-1]))
+                    search = re.compile ('Sample' + str(aval) + '.*' + str (ftype[x]) + '.*' + '_s' + str (alist[b-1]))
                     for file in os.listdir(d):
                         if re.search( search, file) is None:
                             print (search, aval)
@@ -55,9 +55,9 @@ def fileparser ():
         b = len (alist)
         while x < len (ftype):
             while 0 < b <= len (alist):
-                os.mkdir (os.path.join (d, str(ftype [x]) + '_S' + str (alist [b-1])))
-                dst2 = os.path.join (d, str(ftype [x]) + '_S' + str (alist [b-1]))
-                search = re.compile (str (ftype [x]) + '.*' + '_s' + str (alist [b-1]))
+                os.mkdir (os.path.join (d, str(ftype[x]) + '_S' + str (alist[b-1])))
+                dst2 = os.path.join (d, str(ftype[x]) + '_S' + str (alist[b-1]))
+                search = re.compile (str (ftype[x]) + '.*' + '_s' + str (alist[b-1]))
                 for file in os.listdir(d):
                     if re.search( search, file) is None:
                         print (b, x)
