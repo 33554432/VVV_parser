@@ -1,8 +1,10 @@
+import os
+import shutil
+import os.path
+import re
+
+
 def fileparser():
-    import os
-    import shutil
-    import os.path
-    import re
     d = input('Enter parent directory: ')
     # moves annoying useless thumb images into subfolder called 'thumb'
     os.mkdir(os.path.join(d, r'Thumb'))
