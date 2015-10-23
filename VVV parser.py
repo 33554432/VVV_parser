@@ -19,7 +19,7 @@ def fileparser ():
     x = 0
     count = 1
     alist = []
-    #check for "Break up into multiple files based on sample loader position" option; process based on answer
+    # check for "Break up into multiple files based on sample loader position" option; process based on answer
     avar = input ('Did you check "Break up into multiple files based on sample loader position?" (y/n) ')
     if avar == 'y':
         maxsp = int (input('What is the max number of stage positions per plate used? '))
