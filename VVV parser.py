@@ -4,7 +4,7 @@ def fileparser ():
     import os.path
     import re
     d = input ('Enter parent directory: ')
-    # moves annoying useless thumb images into subfolder called 'thumb' 
+    # moves annoying useless thumb images into subfolder called 'thumb'
     os.mkdir (os.path.join (d, r'Thumb'))
     dst1 = os.path.join (d, r'Thumb')
     for file in os.listdir(d):
@@ -14,8 +14,8 @@ def fileparser ():
         else:
             shutil.move (os.path.join (d, file), os.path.join(dst1, file))
     if len (os.listdir(os.path.join(d, r'Thumb')))== 0:
-            os.rmdir(os.path.join(d,r'Thumb'))        
-    ftype = ['RFP', 'DIC', 'GFP'] 
+            os.rmdir(os.path.join(d,r'Thumb'))
+    ftype = ['RFP', 'DIC', 'GFP']
     x = 0
     count = 1
     alist = []
@@ -46,7 +46,7 @@ def fileparser ():
                 b = len (alist)
             aval +=1
             x = 0
-            b = len(alist)  
+            b = len(alist)
     else:
         stagepos = int (input ('How many stage positions? '))
         while count <= stagepos:
@@ -67,4 +67,4 @@ def fileparser ():
                     os.rmdir(dst2)
                 b -=1
             x +=1
-            b = len(alist)  
+            b = len(alist)
