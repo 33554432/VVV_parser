@@ -21,10 +21,14 @@ def fileparser():
     x = 0
     count = 1
     alist = []
-    # check for "Break up into multiple files based on sample loader position" option; process based on answer
-    avar = input('Did you check "Break up into multiple files based on sample loader position?" (y/n) ')
+    # check for option
+    # "Break up into multiple files based on sample loader position"
+    # process based on answer
+    avar = input(('Did you check "Break up into multiple files based on '
+                  'sample loader position?" (y/n) '))
     if avar == 'y':
-        maxsp = int(input('What is the max number of stage positions per plate used? '))
+        maxsp = int(input(('What is the max number of stage positions per '
+                           'plate used? ')))
         while count <= maxsp:
             alist.append(count)
             count += 1
@@ -40,7 +44,8 @@ def fileparser():
                         if re.search(search, file) is None:
                             print(search, aval)
                         else:
-                            shutil.move(os.path.join(d, file), os.path.join(dst2, file))
+                            shutil.move(os.path.join(d, file),
+                                        os.path.join(dst2, file))
                     if len(os.listdir(dst2)) == 0:
                         os.rmdir(dst2)
                     b -= 1
@@ -64,7 +69,8 @@ def fileparser():
                     if re.search(search, file) is None:
                         print(b, x)
                     else:
-                        shutil.move(os.path.join(d, file), os.path.join(dst2, file))
+                        shutil.move(os.path.join(d, file),
+                                    os.path.join(dst2, file))
                 if len(os.listdir(dst2)) == 0:
                     os.rmdir(dst2)
                 b -= 1
