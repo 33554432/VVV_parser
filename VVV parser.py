@@ -16,7 +16,7 @@ def fileparser():
         else:
             shutil.move(os.path.join(d, file), os.path.join(dst1, file))
     if len(os.listdir(os.path.join(d, r'Thumb'))) == 0:
-            os.rmdir(os.path.join(d, r'Thumb'))
+        os.rmdir(os.path.join(d, r'Thumb'))
     ftype = ['RFP', 'DIC', 'GFP']
     x = 0
     count = 1
