@@ -21,6 +21,7 @@ def fileparser():
     x = 0
     count = 1
     alist = []
+    aval = 1
     # This part is here because if you don't have more than one wavelength it won't append *any* ftype to the file name
     # I'm going to slap whoever made this decision
     # check for any mention of DIC, RFP, or GFP in the file name, if none increment count2 variable
@@ -47,7 +48,6 @@ def fileparser():
             alist.append(count)
             count += 1
         b = len(alist)
-        aval = 1
         while aval <= 8:
             while x < len(ftype):
                 while 0 < b <= len(alist):
@@ -69,7 +69,7 @@ def fileparser():
             x = 0
             b = len(alist)
     elif avar == 'n' and count2 != 3:
-        # untested, should work though
+        # this conditional as of yet untested, should work though
         stagepos = int(input('How many stage positions? '))
         while count <= stagepos:
             alist.append(count)
@@ -92,14 +92,13 @@ def fileparser():
             x += 1
             b = len(alist)
     elif avar == 'y' and count2 == 3:
-        # this conditional as of yet untested, is probably broken
+        # this conditional as of yet untested, is maybe borked??
         maxsp = int(input(('What is the max number of stage posittions per '
                            'plate used? ')))
         while count <= maxsp:
             alist.append(count)
             count += 1
         b = len(alist)
-        aval = 1
         while aval <= 8:
             while 0 < b <= len(alist):
                 dst2 = os.path.join(d, '_SAMPLE' + str(aval) + '_S' + str(alist[b-1]))
@@ -114,6 +113,7 @@ def fileparser():
                 if len(os.listdir(dst2)) == 0:
                     os.rmdir(dst2)
                 b -= 1
+            aval += 1
     elif (avar == 'n') and (count2 == 3):
         stagepos = int(input('How many stage positions? '))
         while count <= stagepos:
